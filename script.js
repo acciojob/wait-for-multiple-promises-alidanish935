@@ -17,13 +17,15 @@ Promise.all([p1,p2,p3]).then((results)=>{
 	const totalTime = (Date.now()-startTime)/1000;
 	const output = document.getElementById("output");
 	results.forEach((result)=>{
-		const tRow = document.createElement("tr");
-		tRow.innerHTML = `<td>Promise ${result.pNum}</td><td>${result.time}</td> `
-		output.appendChild(tRow);
+		const Row = document.createElement("tr");
+		Row.innerHTML = `<td>Promise ${result.pNum}</td><td>${result.time.toFixed(3)}</td> `
+		output.appendChild(Row);
 	})
+	const totalRow = document.createElement("tr");
+	totalRow.innerHTML = `<td>Total</td> <td>${totalTime}</td> `
+	output.appendChild(totalRow)
 	
 })
-
 
 
 
